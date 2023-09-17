@@ -12,10 +12,11 @@ class Input extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $placeholder,
-        public string $name,
+        public ?string $placeholder = null,
+        public ?string $name = null,
         public ?string $label = null,
-        public string $type = 'text',
+        public ?string $class = null,
+        public ?string $type = 'text',
         public ?string $value = null,
         public bool $required = false
     ) {

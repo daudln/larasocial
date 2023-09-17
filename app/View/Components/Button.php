@@ -14,7 +14,8 @@ class Button extends Component
     public function __construct(
         public ?string $label = null,
         public string $type = 'submit',
-        public ?string $value = null
+        public ?string $value = null,
+        public ?string $class = null
     ) {
     }
 

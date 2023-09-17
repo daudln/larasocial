@@ -32,18 +32,20 @@
 
     input,
     button {
-        @apply px-4 py-2 text-sm font-medium transition-all border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:ring-offset-2;
+        @apply px-4 py-2 text-[16px] font-medium transition-all border border-gray-300 rounded-md shadow-sm focus:ring-ring focus:ring-offset-2;
     }
 
-    input[type="submit"],
+    input[type="submit"] {
+        @apply p-0 border-none cursor-pointer;
+    }
     button[type="submit"] {
-        @apply hover:bg-gray-50 focus:outline-none focus:ring-2 hover:scale-[1.1] hover:ring-indigo-500 hover:text-gray-700;
+        @apply hover:bg-gray-50 focus:outline-none focus:ring-2 hover:scale-[1.1] hover:ring-ring hover:text-gray-700;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-        @apply px-4 py-2 text-sm font-medium text-gray-700 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500;
+        @apply px-4 py-2 text-sm font-medium text-gray-700 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring;
     }
 }
 
@@ -53,5 +55,8 @@
     }
     .icon {
         @apply w-6 h-6 hover:scale-125 transition-all blur-[1px] hover:blur-0;
+    }
+    .nav-link {
+        @apply hover:scale-[1.1] transition-all text-[16px] hover:text-teal-50;
     }
 }

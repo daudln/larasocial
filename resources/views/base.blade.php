@@ -15,11 +15,11 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-slate-100 text-zinc-900 dark:bg-slate-800 dark:text-zinc-100">
+<body class="bg-slate-100 text-zinc-900 dark:bg-slate-800 dark:text-zinc-100 ">
 
     <x-header />
 
-    <main class="min-h-[calc(100vh-66px-56px)] flex items-center justify-center flex-col gap-4">
+    <main class="min-h-[calc(100vh-66px-56px)]">
         @yield('main')
     </main>
 
