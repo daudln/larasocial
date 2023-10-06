@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
@@ -39,7 +40,7 @@ class UserController extends Controller
         return view('register');
     }
 
-    public function signup(Request $request)
+    public function signup(Request $request): Response
     {
         Log::info('Signup Request Data:', $request->all());
 

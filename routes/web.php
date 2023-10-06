@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +21,16 @@ Route::get('/', function () {
 });
 
 
-Route::get("/signin", [UserController::class, 'signin']);
-Route::post("/login", [UserController::class, 'login']);
-Route::get("/register", [UserController::class, 'register']);
-Route::post("/signup", [UserController::class, 'signup']);
-Route::post("/logout", [UserController::class, 'logout']);
-Route::get("/posts", [PostController::class, 'posts']);
-Route::get("/posts/{slug}", [PostController::class, 'post']);
+Route::prefix("posts")->group(function () {
+    Route::get("/", [PostController::class, 'posts'])->name("posts");
+    Route::post("/create", [PostController::class, 'create'])->name("post-create");
+    Route::get("/{slug}", [PostController::class, 'post'])->name("post");
+});
+
+Route::prefix('auth')->group(function () {
+    Route::get("/signin", [UserController::class, 'signin'])->name("signin");
+    Route::get("/register", [UserController::class, 'register'])->name("register");
+    Route::post("/logout", [UserController::class, 'logout'])->name("logout");
+    Route::post("/login", [UserController::class, 'login'])->name("login");
+    Route::post("/signup", [UserController::class, 'signup'])->name("signup");
+});

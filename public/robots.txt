@@ -1,2 +1,30 @@
 User-agent: *
+
+# Allow crawling of all pages
 Disallow:
+
+# Disallow crawling of specific directories or paths
+Disallow: /private/
+Disallow: /admin/
+Disallow: /user/settings/
+Disallow: /user/messages/
+Disallow: /user/friends/
+
+# Allow crawling of assets and public content
+Allow: /assets/
+Allow: /images/
+Allow: /public/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /uploads/
+
+# Block specific pages or files
+Disallow: /login
+Disallow: /register
+Disallow: /reset-password
+Disallow: /profile/edit
+Disallow: /messages/
+
+# Sitemap location
+Sitemap: https://example.com/sitemap.xml

@@ -12,12 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $cuid = new Cuid2();
-        Schema::create('posts', function (Blueprint $table) use ($cuid) {
+        Schema::create('posts', function (Blueprint $table) {
+            $cuid = new Cuid2();
             $table->id();
             $table->uuid("unique_id")->default($cuid);
             $table->timestamps();
-            $table->string("title", 255);
+            $table->string("title", 255)->unique();
             $table->longText("content");
             $table->foreignId("user_id")->constrained("users");
         });

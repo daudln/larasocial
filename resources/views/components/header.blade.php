@@ -7,19 +7,23 @@
             </a>
         </div>
         <div>
-            <ul class="flex gap-4">
-                <li class="nav-link"><a href="/posts">Posts</a></li>
+            <ul class="flex items-center gap-4">
+                <li class="nav-link"><a href="{{ route('posts') }}">Posts</a></li>
                 @auth
                     <li class="nav-link"><a href="/account">Account</a></li>
                     <li class="nav-link">
-                        <form action="/logout" method="POST">
+                        <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <input type="submit" value="Logout" />
                         </form>
                     </li>
+                    @if (request()->is('posts*'))
+                        <li label="create post" class="nav-link" id="openModalButton">Create post
+                        </li>
+                    @endif
                 @else
-                    <li class="nav-link"><a href="/signin">Signin</a></li>
-                    <li class="nav-link"><a href="/register">Signup</a></li>
+                    <li class="nav-link"><a href="{{ route('signin') }}">Signin</a></li>
+                    <li class="nav-link"><a href="{{ route('register') }}">Signup</a></li>
                 @endauth
             </ul>
         </div>

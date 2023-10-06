@@ -7,8 +7,8 @@
             <x-burner-image class="w-32 h-32" />
             <h2 class="mb-4 text-3xl">Signup to <x-app-name /></h2>
         </div>
-        <x-forms.container>
-            <form action="/signup" method="POST">
+        <x-forms.container class="w-[90%] md:w-[30rem]">
+            <form action="/auth/signup" method="POST">
                 @csrf
                 <div class="flex flex-col gap-6">
                     <x-forms.input type="text" name="name" id="name" placeholder="Name" label="Name" />

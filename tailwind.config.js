@@ -18,6 +18,7 @@ module.exports = {
             primary: "#ff2d20",
             secondary: "#3b82f6",
             ring: "#6366f1",
+            background: "#1E293B",
         },
     },
     plugins: [],

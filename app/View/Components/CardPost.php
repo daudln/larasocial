@@ -13,7 +13,7 @@ class CardPost extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public Post $post,
+        public $post,
         public ?string $class = null,
     ) {
     }

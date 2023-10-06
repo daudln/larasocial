@@ -38,14 +38,16 @@
     input[type="submit"] {
         @apply p-0 border-none cursor-pointer;
     }
-    button[type="submit"] {
-        @apply hover:bg-gray-50 focus:outline-none focus:ring-2 hover:scale-[1.1] hover:ring-ring hover:text-gray-700;
+    button[type="submit"],
+    button[type="button"] {
+        @apply focus:outline-none focus:ring-2 hover:scale-[1.1] hover:ring-ring;
     }
 
     input[type="text"],
     input[type="email"],
+    textarea,
     input[type="password"] {
-        @apply px-4 py-2 text-sm font-medium text-gray-700 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring;
+        @apply px-4 py-2 text-sm font-medium text-gray-700 transition-all border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ring;
     }
 }
 
@@ -57,6 +59,32 @@
         @apply w-6 h-6 hover:scale-125 transition-all blur-[1px] hover:blur-0;
     }
     .nav-link {
-        @apply hover:scale-[1.1] transition-all text-[16px] hover:text-teal-50;
+        @apply hover:scale-[1.1] transition-all text-[16px] hover:text-teal-50 cursor-pointer;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
